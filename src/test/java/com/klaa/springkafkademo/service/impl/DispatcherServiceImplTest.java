@@ -1,5 +1,6 @@
 package com.klaa.springkafkademo.service.impl;
 
+import com.klaa.springkafkademo.utils.EventData;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,6 +14,6 @@ class DispatcherServiceImplTest {
 
     @Test
     void process() {
-        dispatcherService.process("payload");
+        dispatcherService.process(EventData.TestData());
     }
 }

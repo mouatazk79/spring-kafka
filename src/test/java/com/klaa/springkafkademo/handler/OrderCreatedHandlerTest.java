@@ -2,6 +2,7 @@ package com.klaa.springkafkademo.handler;
 
 import com.klaa.springkafkademo.service.DispatcherService;
 import com.klaa.springkafkademo.service.impl.DispatcherServiceImpl;
+import com.klaa.springkafkademo.utils.EventData;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,6 +20,6 @@ class OrderCreatedHandlerTest {
 
     @Test
     void listen() {
-        orderCreatedHandler.listen("payload");
+        orderCreatedHandler.listen(EventData.TestData());
     }
 }

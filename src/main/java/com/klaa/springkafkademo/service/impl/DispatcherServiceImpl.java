@@ -1,5 +1,6 @@
 package com.klaa.springkafkademo.service.impl;
 
+import com.klaa.springkafkademo.model.OrderCreated;
 import com.klaa.springkafkademo.service.DispatcherService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class DispatcherServiceImpl implements DispatcherService {
     @Override
-    public void process(String payload) {
+    public void process(OrderCreated payload) {
         log.info("payload processed");
     }
 }

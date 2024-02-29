@@ -1,5 +1,6 @@
 package com.klaa.springkafkademo.handler;
 
+import com.klaa.springkafkademo.model.OrderCreated;
 import com.klaa.springkafkademo.service.DispatcherService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,9 +16,8 @@ public class OrderCreatedHandler {
             id = "orderConsumerClient",
             topics = "order.created",
             groupId = "dispatch.order.consumer"
-
     )
-    public void listen(String payload){
+    public void listen(OrderCreated payload){
         log.info("received payload: "+payload);
         dispatcherService.process(payload);
     }

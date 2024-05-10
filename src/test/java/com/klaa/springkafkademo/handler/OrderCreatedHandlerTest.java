@@ -1,5 +1,6 @@
 package com.klaa.springkafkademo.handler;
 
+import com.klaa.springkafkademo.model.OrderCreated;
 import com.klaa.springkafkademo.service.DispatcherService;
 import com.klaa.springkafkademo.service.impl.DispatcherServiceImpl;
 import com.klaa.springkafkademo.utils.EventData;
@@ -20,6 +21,7 @@ class OrderCreatedHandlerTest {
 
     @Test
     void listen() {
-        orderCreatedHandler.listen(EventData.TestData());
+        OrderCreated orderCreated=EventData.TestData();
+        orderCreatedHandler.listen(orderCreated);
     }
 }
